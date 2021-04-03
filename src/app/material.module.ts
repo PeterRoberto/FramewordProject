@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+// import { FlexLayoutModule } from '@angular/flex-layout'; 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
@@ -26,7 +26,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSliderModule} from '@angular/material/slider';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSortModule} from '@angular/material/sort';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -37,9 +37,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
-  imports: [ ],
+  imports: [  ],
   exports: [
     MatAutocompleteModule,
     MatBadgeModule,
@@ -79,8 +79,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatTooltipModule,
     MatTreeModule,
     // FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ], 
-  declarations: []
+  declarations: [] 
 })
 export class MaterialModule { }
+ 

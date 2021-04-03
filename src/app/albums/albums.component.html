@@ -1,0 +1,15 @@
+<section class="albums-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let album of albumsData">
+        <mat-card class="example-card" >
+          <mat-card-header>
+            <mat-card-title class="no-m-left">User Id: {{album.userId}}</mat-card-title>
+            <mat-card-subtitle class="no-m-left">Id: {{album.id}}</mat-card-subtitle>  
+          </mat-card-header>
+          <h3 class="title">{{album.title}}</h3>
+        </mat-card>
+      </div>
+    </div>
+  </div>  
+</section>

@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Posts } from '../modules/posts';
-// import { Albums } from '../models/albums';
-// import { Todos } from '../models/todos';
+import { Albums } from '../modules/albums';
+import { Todos } from '../modules/todos'; 
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+@Injectable({
+    providedIn: 'root'
+})  
 
 export class ApiRestService {
 
-    url = 'https://jsonplaceholder.typicode.com';
 
-     // API path
-  urlPadrao = 'https://jsonplaceholder.typicode.com';
+  // API path
+  url = 'https://jsonplaceholder.typicode.com';
+
   posts = '/posts/';
   albums = '/albums/';
   todos = '/todos/';
@@ -46,30 +49,32 @@ export class ApiRestService {
   // Get dados dos posts
   getPosts(): Observable<Posts> {
     return this.http
-      .get<Posts>(this.urlPadrao + this.posts)
+      .get<Posts>(this.url + this.posts)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
 
-    // Get dados dos albums
-    // getAlbums(): Observable<Albums> {
-    //   return this.http
-    //     .get<Todos>(this.urlPadrao + this.albums)
-    //     .pipe(
-    //       retry(1),
-    //       catchError(this.handleError)
-    //     )
-    // }
+    // Get dados dos albums 
+    getAlbums(): Observable<Albums> {
+      return this.http
+        .get<Albums>(this.url + this.albums)
+        .pipe(
+          retry(1),
+          catchError(this.handleError)
+        ) 
+    }
 
-    // getToDos(): Observable<Todos> {
-    //   return this.http
-    //     .get<Todos>(this.urlPadrao + this.todos)
-    //     .pipe(
-    //       retry(1),
-    //       catchError(this.handleError)
-    //     )
-    // }
+    // Get dados dos Todos
+    getToDos(): Observable<Todos> {
+      return this.http
+        .get<Todos>(this.url + this.todos)
+        .pipe(
+          retry(1),
+          catchError(this.handleError)
+        )
+    }
+
 
 }

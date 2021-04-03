@@ -1,11 +1,20 @@
-<section>
-    <div class="example-label">Raised</div>
-    <div class="example-button-row">
-      <button mat-raised-button>Basic</button>
-      <button mat-raised-button color="primary">Primary</button>
-      <button mat-raised-button color="accent">Accent</button>
-      <button mat-raised-button color="warn">Warn</button>
-      <button mat-raised-button disabled>Disabled</button>
-      <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+<section class="posts-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let post of postsData">
+        <mat-card class="example-card" >
+          <mat-card-header>
+            <mat-card-title class="no-m-left">User Id: {{post.userId}}</mat-card-title>
+            <mat-card-subtitle class="no-m-left">Id: {{post.id}}</mat-card-subtitle>  
+          </mat-card-header>
+          <h3 class="title">{{post.title}}</h3>
+          <mat-card-content>
+            <p>
+              {{post.body}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
+  </div>  
 </section>

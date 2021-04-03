@@ -1,0 +1,21 @@
+<section class="todos-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let todos of todosData">
+        <mat-card class="example-card" >
+          <mat-card-header>
+            <mat-card-title class="no-m-left">User Id: {{todos.userId}}</mat-card-title>
+            <mat-card-subtitle class="no-m-left">Id: {{todos.id}}</mat-card-subtitle>  
+          </mat-card-header>
+          <h3 class="title">{{todos.title}}</h3>
+          <mat-card-content>
+            <p>
+              {{todos.completed}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>  
+</section>
+  
